@@ -25,7 +25,9 @@ class NavBar extends Component {
     deleteNote = (id) => {
         // deleting the note based on id using backend
         let idToDelete = `/${id}`;
+        // axios in note service has the delete functionality
         NotesService.deleteNote(idToDelete);
+        // reloading the page so that the user can see the new added note
         window.location.reload(false);
     }
 
@@ -68,6 +70,7 @@ class NavBar extends Component {
                 <Notes liveNote={this.state.noteClicked}/>
             </div>
             <div className="quotesDiv">
+                {/* Rendering jokes on DOM that has the api call */}
                 <Quotes />
             </div>
 
