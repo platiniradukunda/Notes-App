@@ -5,10 +5,15 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <NavBar/>
-      <Quotes/>
+      <Switch>
+      < Route exact path="/" component={NavBar}/>
+      {/* < Route exact path="/" component={Quotes}/> */}
+      {/* <Quotes/> */}
+      </Switch>
     </div>
+    </Router>
   );
 }
 
