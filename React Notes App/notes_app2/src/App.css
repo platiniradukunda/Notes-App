@@ -66,11 +66,6 @@ button:hover{
   /* width: 50%; */
 }
 
-/* .mainContainer .noteTab {
-  justify-self: center;
-  align-self: center;
-} */
-
 .navBarTitle {
   display: flex;
   justify-content: space-between;
@@ -99,7 +94,6 @@ button:hover{
 
 .editNotes input, textarea{
   display: block;
-  /* width: 100%; */
   background-color: transparent;
   color: whitesmoke;
   margin-top: 3%;
@@ -132,46 +126,16 @@ button:hover{
   background-color: rgb(48, 53, 63);
   cursor: pointer;
 }
-
-/* .noNotes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-
-
-/* .quotes {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
-  width: 100vw;
-} */
-
 .reviewEdit input, textarea {
-  /* display: flex; */
-  /* justify-items: center; */
   width: 60%;
   background-color: transparent;
   color: whitesmoke;
-  /* margin-top: 3%; */
-}
-
-.review {
-  /* display: grid; */
-  /* grid-template-rows: repeat(2, 50%); */
-  /* width: 100vw; */
-  /* justify-self: center; */
-  /* align-content: center; */
-  /* align-self: center; */
 }
 
 .reviewEdit input {
-  /* width: 30%; */
   height: 40%;
   border: none;
-  border-bottom: solid whitesmoke 1px;
+  border-bottom: solid rgb(48, 53, 63) 1px;
 }
 
 .reviewEdit input:focus {
@@ -189,10 +153,11 @@ button:hover{
 }
 
 .reviewEdit textarea {
-  /* width: 30%; */
   height: 40vh;
   color: whitesmoke;
   margin-left: 20%;
+  margin-top: 2%;
+  border: solid rgb(48, 53, 63) 1px;
 }
 
 .reviewEdit textarea::-webkit-input-placeholder {
@@ -204,4 +169,10 @@ button:hover{
   display: grid;
   justify-self: center;
   align-self: center;
+}
+
+.noteButton {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 39%;
 }
