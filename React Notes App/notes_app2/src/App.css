@@ -5,6 +5,9 @@
   height: 100vh;
   background-color: rgb(13,17,23);
   color: whitesmoke;
+  display: grid;
+  align-self: center;
+  justify-self: center;
 }
 
 button {
@@ -27,6 +30,12 @@ button:hover{
                        "navbar noteTab noteTab"
                        "quotesDiv quotesDiv quotesDiv "
   ;  
+  /* align-self: center; */
+  /* justify-self: center; */
+}
+
+.mainContainer .quotesDiv {
+   justify-self: center;
 }
 
 .navbar {
@@ -65,6 +74,7 @@ button:hover{
 
 .quotesDiv {
   grid-area: quotesDiv;
+  width: 60vw;
 }
 
 .notes {
@@ -101,6 +111,7 @@ button:hover{
 
 .editNotes textarea {
   height: 60vh;
+  /* width: 30vw; */
   border: solid 1px rgb(65, 63, 63);
 }
 
@@ -129,3 +140,11 @@ button:hover{
   align-content: center;
   width: 100vw;
 } */
+
+.reviewEdit input, textarea {
+  display: flex;
+  width: 60%;
+  background-color: transparent;
+  color: whitesmoke;
+  margin-top: 3%;
+}
