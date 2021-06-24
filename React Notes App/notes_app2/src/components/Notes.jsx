@@ -21,7 +21,7 @@ function Notes({liveNote}) {
     }
 
     var updateNote = (editingNote) => {
-        return NotesService.updateNote(editingNote);
+        return NotesService.postNotes(editingNote);
     }
 
 

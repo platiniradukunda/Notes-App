@@ -8,6 +8,7 @@
   display: grid;
   align-self: center;
   justify-self: center;
+  font-size: 1em;
 }
 
 button {
@@ -18,6 +19,7 @@ button {
   cursor: pointer;
   margin: 0;
   border: 0;
+  font-size: 1em;
 }
 
 button:hover{
@@ -29,9 +31,8 @@ button:hover{
   grid-template-areas: "navbar noteTab noteTab"
                        "navbar noteTab noteTab"
                        "quotesDiv quotesDiv quotesDiv "
-  ;  
-  /* align-self: center; */
-  /* justify-self: center; */
+  ;
+  gap: unset;
 }
 
 .mainContainer .quotesDiv {
@@ -40,10 +41,11 @@ button:hover{
 
 .navbar {
   grid-area: navbar;
-  /* border-right: solid 1px rgb(65, 63, 63); */
   width: 60%;
+  box-sizing: border-box;
   overflow-y: scroll;
   height: calc(100vh - 25vh);
+  margin-right: 0;
 }
 
 .navbar::-webkit-scrollbar {
