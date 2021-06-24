@@ -64,6 +64,11 @@ button:hover{
   grid-area: noteTab;
 }
 
+/* .mainContainer .noteTab {
+  justify-self: center;
+  align-self: center;
+} */
+
 .navBarTitle {
   display: flex;
   justify-content: space-between;

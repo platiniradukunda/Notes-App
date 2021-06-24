@@ -10,7 +10,6 @@ function App() {
       <Switch>
       < Route exact path="/" component={NavBar}/>
       < Route exact path="/review" component={ReviewPostPage}/>
-      < Route exact path="/notes" component={NavBar}/>
       </Switch>
     </div>
     </Router>

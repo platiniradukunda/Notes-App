@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 function ReviewPage(props) {
     return (
-        <div>
-            <Link to="/review"><p>Leave a review</p></Link>
+        <div className="linkToReviewPage">
+            <Link to="/review"><button>Leave a review</button></Link>
         </div>
     );
 }

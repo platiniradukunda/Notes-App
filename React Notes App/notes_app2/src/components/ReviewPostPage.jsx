@@ -20,7 +20,7 @@ class ReviewPostPage extends Component {
         return (
             <div className="review">
                 <div className="back">
-                    <Link to="/notes"><button>Notes</button></Link>
+                    <Link to="/"><button>Notes</button></Link>
                 </div>
 
                 <div className="reviewEdit">
