@@ -174,5 +174,13 @@ button:hover{
 .noteButton {
   display: flex;
   justify-content: flex-start;
+  vertical-align: center;
   margin-left: 39%;
+}
+
+.noteTab .noNotes {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 35%;
+  margin-top: 30%;
 }
