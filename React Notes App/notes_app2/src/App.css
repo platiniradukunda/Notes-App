@@ -1,0 +1,136 @@
+.App {
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(13,17,23);
+  color: whitesmoke;
+  display: grid;
+  grid-template-areas: "main main main"
+                       "main main main"
+                       "quotes quotes quotes"
+  ;
+}
+
+button {
+  background: none;
+  background-color: transparent;
+  transition: 0.5s;
+  color: whitesmoke;
+  cursor: pointer;
+  margin: 0;
+  border: 0;
+}
+
+button:hover{
+  color: aqua;
+}
+
+.mainContainer {
+  grid-area: main;
+  display: grid;
+  grid-template-areas: "navbar noteTab noteTab"
+                       "navbar noteTab noteTab"
+  ;  
+}
+
+.navbar {
+  grid-area: navbar;
+  /* border-right: solid 1px rgb(65, 63, 63); */
+  width: 60%;
+  overflow-y: scroll;
+  height: calc(100vh - 25vh);
+}
+
+.navbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.navbar::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(65, 63, 63);
+  border-radius: 20px;
+}
+
+.navbar::-webkit-scrollbar-thumb {
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+
+.noteTab {
+  grid-area: noteTab;
+}
+
+.navBarTitle {
+  display: flex;
+  justify-content: space-between;
+  padding: 35px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.quotes {
+  grid-area: quotes;
+}
+
+.notes {
+  grid-area: notes;
+}
+
+.titleAndDelete {
+  display: flex;
+  justify-content: space-between;
+}
+
+.listNotes {
+  padding: 35px;
+}
+
+.editNotes input, textarea{
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  color: whitesmoke;
+  margin-top: 3%;
+}
+
+.editNotes input {
+  height: 3vh;
+  border: none;
+  border-bottom: solid rgb(65, 63, 63) 1px;
+}
+
+.editNotes input:focus{
+  background: transparent;
+  outline: 0;
+}
+
+.editNotes textarea {
+  height: 60vh;
+  border: solid 1px rgb(65, 63, 63);
+}
+
+.editNotes textarea::-webkit-input-placeholder {
+  color: whitesmoke;
+  transition: opacity .2s ease-in-out;
+}
+
+.individualNote:hover {
+  background-color: rgb(48, 53, 63);
+  cursor: pointer;
+}
+
+/* .noNotes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+
+
+/* .quotes {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  width: 100vw;
+} */
