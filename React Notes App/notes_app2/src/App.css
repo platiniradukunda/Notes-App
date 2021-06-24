@@ -30,9 +30,8 @@ button:hover{
   display: grid;
   grid-template-areas: "navbar noteTab noteTab"
                        "navbar noteTab noteTab"
-                       "quotesDiv quotesDiv quotesDiv "
+                       "quotesDiv quotesDiv quotesDiv"
   ;
-  gap: unset;
 }
 
 .mainContainer .quotesDiv {
@@ -41,7 +40,7 @@ button:hover{
 
 .navbar {
   grid-area: navbar;
-  width: 60%;
+  width: 70%;
   box-sizing: border-box;
   overflow-y: scroll;
   height: calc(100vh - 25vh);
@@ -64,6 +63,7 @@ button:hover{
 
 .noteTab {
   grid-area: noteTab;
+  /* width: 50%; */
 }
 
 /* .mainContainer .noteTab {
@@ -99,7 +99,7 @@ button:hover{
 
 .editNotes input, textarea{
   display: block;
-  width: 100%;
+  /* width: 100%; */
   background-color: transparent;
   color: whitesmoke;
   margin-top: 3%;
@@ -107,6 +107,7 @@ button:hover{
 
 .editNotes input {
   height: 3vh;
+  width: 80%;
   border: none;
   border-bottom: solid rgb(65, 63, 63) 1px;
 }
@@ -118,7 +119,7 @@ button:hover{
 
 .editNotes textarea {
   height: 60vh;
-  /* width: 30vw; */
+  width: 80%;
   border: solid 1px rgb(65, 63, 63);
 }
 
@@ -149,16 +150,25 @@ button:hover{
 } */
 
 .reviewEdit input, textarea {
-  display: flex;
-  justify-items: center;
+  /* display: flex; */
+  /* justify-items: center; */
   width: 60%;
   background-color: transparent;
   color: whitesmoke;
-  margin-top: 3%;
+  /* margin-top: 3%; */
+}
+
+.review {
+  /* display: grid; */
+  /* grid-template-rows: repeat(2, 50%); */
+  /* width: 100vw; */
+  /* justify-self: center; */
+  /* align-content: center; */
+  /* align-self: center; */
 }
 
 .reviewEdit input {
-  width: 30%;
+  /* width: 30%; */
   height: 40%;
   border: none;
   border-bottom: solid whitesmoke 1px;
@@ -179,9 +189,10 @@ button:hover{
 }
 
 .reviewEdit textarea {
-  width: 30%;
+  /* width: 30%; */
   height: 40vh;
   color: whitesmoke;
+  margin-left: 20%;
 }
 
 .reviewEdit textarea::-webkit-input-placeholder {
