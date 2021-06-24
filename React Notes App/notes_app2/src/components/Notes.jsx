@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import NotesService from '../services/NotesService';
 
 function Notes({liveNote}) {
-
+    
+    // initial values to have in state whenever a note is opened
     const initialValues = {
         title: null, 
         notes: null,
         lastEdit: Date.now(),
     }
-
+    
+    // Hooks to set state to initialValues contents
     const [editingNote, setEditingNote] = useState(initialValues);
 
+    // handle change listens for when user type something in the input and textarea boxes
+    // and updates state accordingly
     var handleChange = (event) => {
         setEditingNote({
             ...editingNote,
@@ -19,7 +23,8 @@ function Notes({liveNote}) {
             lastEdit: Date.now(), 
         })
     }
-
+    // Updating the database with the new content
+    // Calls on the axios method in notes service
     var updateNote = (editingNote) => {
         return NotesService.postNotes(editingNote);
     }
