@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NotesService from '../services/NotesService';
 import Notes from './Notes';
 import NotesPostComponent from './NotesPostComponent';
+import Quotes from './Quotes';
 
 class NavBar extends Component {
     constructor() {
@@ -66,6 +67,10 @@ class NavBar extends Component {
                 {/* passing the clicked on note as prop to Notes component */}
                 <Notes liveNote={this.state.noteClicked}/>
             </div>
+            <div>
+                <Quotes />
+            </div>
+
         </div>
     );
     }
