@@ -188,3 +188,9 @@ button:hover{
   color: whitesmoke;
   transition: opacity .2s ease-in-out;
 }
+
+.thanks {
+  display: grid;
+  justify-self: center;
+  align-self: center;
+}
