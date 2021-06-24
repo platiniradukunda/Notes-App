@@ -5,11 +5,6 @@
   height: 100vh;
   background-color: rgb(13,17,23);
   color: whitesmoke;
-  display: grid;
-  grid-template-areas: "main main main"
-                       "main main main"
-                       "quotes quotes quotes"
-  ;
 }
 
 button {
@@ -27,10 +22,10 @@ button:hover{
 }
 
 .mainContainer {
-  grid-area: main;
   display: grid;
   grid-template-areas: "navbar noteTab noteTab"
                        "navbar noteTab noteTab"
+                       "quotesDiv quotesDiv quotesDiv "
   ;  
 }
 
@@ -68,8 +63,8 @@ button:hover{
   margin-bottom: 0;
 }
 
-.quotes {
-  grid-area: quotes;
+.quotesDiv {
+  grid-area: quotesDiv;
 }
 
 .notes {

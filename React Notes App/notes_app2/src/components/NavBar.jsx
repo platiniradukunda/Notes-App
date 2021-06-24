@@ -67,7 +67,7 @@ class NavBar extends Component {
                 {/* passing the clicked on note as prop to Notes component */}
                 <Notes liveNote={this.state.noteClicked}/>
             </div>
-            <div>
+            <div className="quotesDiv">
                 <Quotes />
             </div>
 
