@@ -39,6 +39,7 @@ function Notes({liveNote}) {
 
     return (
         <div className="notes">
+            {/* input fields to enter title and notes */}
             <div className="editNotes">
                 <label htmlFor="title"></label>
                 <input type="text" className="title" defaultValue={liveNote.title} onChange={(e)=>handleChange(e)}/>
@@ -46,7 +47,8 @@ function Notes({liveNote}) {
                 <textarea className="notes" defaultValue={liveNote.notes} onChange={(e)=>handleChange(e)} placeholder="Enter notes here... "/>
             </div>
             <div className="noteButton">
-                <button onClick={()=>updateNote(editingNote)}>Update</button>
+                {/* button triggers the update database functionality */}
+                <button onClick={()=>updateNote(editingNote)}>Save</button>
             </div>
         </div>
     );
