@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReviewService from '../services/ReviewService'
 
 class ReviewPostPage extends Component {
     constructor() {
@@ -16,9 +17,10 @@ class ReviewPostPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className="review">
                 <input type="text" placeholder="Enter name here...."/>
                 <textarea name="" ></textarea>
+                <button>Submit</button>
             </div>
         );
     }
