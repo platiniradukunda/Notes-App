@@ -31,7 +31,7 @@ class ReviewPostPage extends Component {
 
                 <div className="reviewEdit">
                     <input type="text" placeholder="Enter name here..." onChange={(e)=>this.handleChange(e)} id="name"/>
-                    <textarea name="" onChange={(e)=>this.handleChange(e)} id="review" ></textarea>
+                    <textarea name="" onChange={(e)=>this.handleChange(e)} id="review" placeholder="Enter review here..."></textarea>
                     <button onClick={this.addReview}>Submit</button>
                 </div>
                 

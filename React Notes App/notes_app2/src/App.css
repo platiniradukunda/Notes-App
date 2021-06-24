@@ -150,8 +150,41 @@ button:hover{
 
 .reviewEdit input, textarea {
   display: flex;
+  justify-items: center;
   width: 60%;
   background-color: transparent;
   color: whitesmoke;
   margin-top: 3%;
+}
+
+.reviewEdit input {
+  width: 30%;
+  height: 40%;
+  border: none;
+  border-bottom: solid whitesmoke 1px;
+}
+
+.reviewEdit input:focus {
+  background: transparent;
+  outline: 0;
+}
+
+.reviewEdit input::-webkit-input-placeholder {
+  color: whitesmoke;
+  transition: opacity .2s ease-in-out;
+}
+
+.reviewEdit input:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+.reviewEdit textarea {
+  width: 30%;
+  height: 40vh;
+  color: whitesmoke;
+}
+
+.reviewEdit textarea::-webkit-input-placeholder {
+  color: whitesmoke;
+  transition: opacity .2s ease-in-out;
 }
