@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ReviewService from '../services/ReviewService'
+import ReviewService from '../services/ReviewService';
+import { Link } from 'react-router-dom';
 
 class ReviewPostPage extends Component {
     constructor() {
@@ -18,9 +19,16 @@ class ReviewPostPage extends Component {
     render() {
         return (
             <div className="review">
-                <input type="text" placeholder="Enter name here...."/>
-                <textarea name="" ></textarea>
-                <button>Submit</button>
+                <div className="back">
+                    <Link to="/notes"><button>Notes</button></Link>
+                </div>
+
+                <div className="reviewEdit">
+                    <input type="text" placeholder="Enter name here...."/>
+                    <textarea name="" ></textarea>
+                    <button>Submit</button>
+                </div>
+                
             </div>
         );
     }
