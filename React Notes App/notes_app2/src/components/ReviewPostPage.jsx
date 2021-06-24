@@ -11,6 +11,12 @@ class ReviewPostPage extends Component {
         }
     }
 
+    handleChange = (event) => {
+        this.setState({
+            [event.target.id]: event.target.value,
+        })
+    }
+
     addReview = () => {
         ReviewService.postReview(this.state).then(response=>{console.log(response)}).catch(error=>{console.log(error)});
         window.location.reload(false);
@@ -24,9 +30,9 @@ class ReviewPostPage extends Component {
                 </div>
 
                 <div className="reviewEdit">
-                    <input type="text" placeholder="Enter name here...."/>
-                    <textarea name="" ></textarea>
-                    <button>Submit</button>
+                    <input type="text" placeholder="Enter name here..." onChange={(e)=>this.handleChange(e)} id="name"/>
+                    <textarea name="" onChange={(e)=>this.handleChange(e)} id="review" ></textarea>
+                    <button onClick={this.addReview}>Submit</button>
                 </div>
                 
             </div>
