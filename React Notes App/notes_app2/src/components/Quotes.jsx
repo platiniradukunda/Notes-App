@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReviewPage from './ReviewPage';
 
 class Quotes extends Component {
     constructor() {
@@ -34,6 +35,7 @@ class Quotes extends Component {
         return (
             <div className="quotes">
                 <h3>{`Useless Fact: ${this.state.fact}`}</h3>
+                <ReviewPage />
             </div>
         );
     }
