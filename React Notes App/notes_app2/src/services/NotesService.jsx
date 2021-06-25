@@ -10,7 +10,7 @@ class NotesService {
 
     // method to post notes to DB
     postNotes(itemsInState) {
-        return axios.post(notes_url, itemsInState)
+        return axios.post(notes_url, itemsInState).then(response=>{console.log(response)}).catch(error=>{console.log(error)});
     }
 
     // method to delete notes from DB
@@ -22,6 +22,16 @@ class NotesService {
     updateNote(newInfo) {
         return axios.put(notes_url, newInfo)
     }
+
+    // updateCourse = data => {
+    //     console.log(data)
+    //     return axios
+    //        .put(${courseURL}/directory/update, data)
+    //        .then(res => res.data)
+    //        .catch(err => {
+    //           console.log("AXIOS ERROR: ", err);
+    //           return "bad request";
+    //        })
 }
 
 export default new NotesService();

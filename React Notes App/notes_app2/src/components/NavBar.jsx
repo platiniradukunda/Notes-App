@@ -10,6 +10,9 @@ class NavBar extends Component {
         this.state = {
            notesTable: [],
            noteClicked: null,
+           title: "",
+           notes: "",
+           lastEdit: "",
         }
     }
 
@@ -35,8 +38,28 @@ class NavBar extends Component {
         // Looping through the array in state and finding the note that matches the clicked on note 
         const response = this.state.notesTable.find((note) => note.id === clicked);
         // setting state with the clicked on note's object so that it can be used in the Notes component
+        console.log(response)
         this.setState({
             noteClicked: response,
+            title: response.title,
+            notes: response.notes,
+            lastEdit: Date.now()
+        })
+    }
+
+    // handle change listens for when user type something in the input and textarea boxes
+    // and updates state accordingly
+    handleChange = (event, input) => {
+        // noteClicked:{[event.target.className]: event.target.value,id: } 
+        console.log(event, input)
+        if(input === "title") {
+            this.setState({title: event.target.value})
+        } 
+        if(input === "notes") {
+            this.setState({notes: event.target.value})
+        }
+        this.setState({
+            lastEdit: Date.now(),
         })
     }
 
@@ -67,7 +90,7 @@ class NavBar extends Component {
             </div>
             <div className="noteTab">
                 {/* passing the clicked on note as prop to Notes component */}
-                <Notes liveNote={this.state.noteClicked}/>
+                <Notes noteClicked={this.state.noteClicked}   handleChange={this.handleChange} state={this.state}/>
             </div>
             <div className="quotesDiv">
                 {/* Rendering jokes on DOM that has the api call */}

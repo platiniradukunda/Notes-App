@@ -13,8 +13,8 @@ class NotesPostComponent extends Component {
     }
 
     addNote = () => {
-        NotesService.postNotes(this.state).then(response=>{console.log(response)}).catch(error=>{console.log(error)});
-        window.location.reload(false);
+        NotesService.postNotes(this.state)
+        window.location.reload();
     }
 
 
