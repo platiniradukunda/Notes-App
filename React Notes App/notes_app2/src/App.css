@@ -63,7 +63,6 @@ button:hover{
 
 .noteTab {
   grid-area: noteTab;
-  /* width: 50%; */
 }
 
 .navBarTitle {
