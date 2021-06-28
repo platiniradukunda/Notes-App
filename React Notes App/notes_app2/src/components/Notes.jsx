@@ -2,6 +2,7 @@ import React from 'react';
 
 function Notes({noteClicked, handleChange, state, updateNote}) {
 
+    // creating an object to pass to the update function so that the database can receive the new info
     const newInfo = {
         title: state.title,
         notes: state.notes,

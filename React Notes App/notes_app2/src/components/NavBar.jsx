@@ -31,7 +31,7 @@ class NavBar extends Component {
         // axios in note service has the delete functionality
         NotesService.deleteNote(idToDelete);
         // reloading the page so that the user can see the new added note
-        window.location.reload(false);
+        window.location.reload();
     }
 
     clickedNote = (clicked) => {
@@ -49,35 +49,31 @@ class NavBar extends Component {
     // handle change listens for when user type something in the input and textarea boxes
     // and updates state accordingly
     handleChange = (event, input) => {
-        // noteClicked:{[event.target.className]: event.target.value,id: }
+        // updating state title key with what is typed in the input field
         if(input === "title") {
             this.setState({title: event.target.value})
-        } 
+        }
+        // updating state notes key with what is typed in the text area
         if(input === "notes") {
             this.setState({notes: event.target.value})
         }
+        // updating the time at which the edit is made in state so that it can be displayed in the DOM
         this.setState({
             lastEdit: Date.now(),
         })
-
-        // // const newObjectForUpdate = null;
-
-        // const newObjectForUpdate = {
-        //     title: this.state.title,
-        //     notes: this.state.notes,
-        //     lastEdit: this.state.lastEdit,
-        //     // id: noteClicked.id,
-        // }
-
-        // return newObjectForUpdate
     }
-
-    // function to update note in database 
+    
+    // function to update note in database, takes an object
+    // which is the note clicked id and the contents typed in the note
     updateNote = (updateInfo) => {
         console.log(updateInfo)
         NotesService.updateNote(updateInfo)
+        NotesService.getNote().then((response)=>{
+            this.setState({
+                notesTable: response.data
+            })
+        })
     }
-
 
     render () {
     return (
