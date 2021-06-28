@@ -38,7 +38,6 @@ class NavBar extends Component {
         // Looping through the array in state and finding the note that matches the clicked on note 
         const response = this.state.notesTable.find((note) => note.id === clicked);
         // setting state with the clicked on note's object so that it can be used in the Notes component
-        console.log(response)
         this.setState({
             noteClicked: response,
             title: response.title,
@@ -50,8 +49,7 @@ class NavBar extends Component {
     // handle change listens for when user type something in the input and textarea boxes
     // and updates state accordingly
     handleChange = (event, input) => {
-        // noteClicked:{[event.target.className]: event.target.value,id: } 
-        console.log(event, input)
+        // noteClicked:{[event.target.className]: event.target.value,id: }
         if(input === "title") {
             this.setState({title: event.target.value})
         } 
@@ -61,7 +59,25 @@ class NavBar extends Component {
         this.setState({
             lastEdit: Date.now(),
         })
+
+        // // const newObjectForUpdate = null;
+
+        // const newObjectForUpdate = {
+        //     title: this.state.title,
+        //     notes: this.state.notes,
+        //     lastEdit: this.state.lastEdit,
+        //     // id: noteClicked.id,
+        // }
+
+        // return newObjectForUpdate
     }
+
+    // function to update note in database 
+    updateNote = (updateInfo) => {
+        console.log(updateInfo)
+        NotesService.updateNote(updateInfo)
+    }
+
 
     render () {
     return (
@@ -90,7 +106,7 @@ class NavBar extends Component {
             </div>
             <div className="noteTab">
                 {/* passing the clicked on note as prop to Notes component */}
-                <Notes noteClicked={this.state.noteClicked}   handleChange={this.handleChange} state={this.state}/>
+                <Notes noteClicked={this.state.noteClicked}   handleChange={this.handleChange} state={this.state} updateNote={this.updateNote}/>
             </div>
             <div className="quotesDiv">
                 {/* Rendering jokes on DOM that has the api call */}

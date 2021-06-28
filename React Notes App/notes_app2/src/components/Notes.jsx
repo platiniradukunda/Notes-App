@@ -1,22 +1,12 @@
-import React, { useState } from 'react';
-import NotesService from '../services/NotesService';
+import React from 'react';
 
-function Notes({noteClicked, handleChange, state}) {
-    
-    // initial values to have in state whenever a note is opened
-    // const initialValues = {
-    //     title: null, 
-    //     notes: null,
-    //     lastEdit: Date.now(),
-    // }
-    
-    // Hooks to set state to initialValues contents
-    const [editingNote, setEditingNote] = useState();
+function Notes({noteClicked, handleChange, state, updateNote}) {
 
-    // Updating the database with the new content
-    // Calls on the axios method in notes service
-    var updateNote = (editingNote) => {
-        NotesService.postNotes(editingNote);
+    const newInfo = {
+        title: state.title,
+        notes: state.notes,
+        lastEdit: state.lastEdit,
+        id: noteClicked === null ? null :  noteClicked.id,
     }
 
     // if noteClicked is not selected then display no note selected
@@ -38,7 +28,7 @@ function Notes({noteClicked, handleChange, state}) {
             </div>
             <div className="noteButton">
                 {/* button triggers the update database functionality */}
-                <button onClick={()=>updateNote(editingNote)}>Save</button>
+                <button onClick={()=>updateNote(newInfo)}>Save</button>
             </div>
         </div>
     );
