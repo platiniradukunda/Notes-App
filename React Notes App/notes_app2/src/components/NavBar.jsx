@@ -67,7 +67,7 @@ class NavBar extends Component {
     // which is the note clicked id and the contents typed in the note
     updateNote = (updateInfo) => {
         NotesService.updateNote(updateInfo)
-        // updating state again so that the navbar updates on click of save button
+        // updating state again so that the navbar updates and gets notes from db on click of save button 
         NotesService.getNote().then((response)=>{
             this.setState({
                 notesTable: response.data
@@ -113,7 +113,6 @@ class NavBar extends Component {
     );
     }
 }
-
 
 
 export default NavBar;
