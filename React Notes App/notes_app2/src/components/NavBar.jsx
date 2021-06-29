@@ -66,8 +66,8 @@ class NavBar extends Component {
     // function to update note in database, takes an object
     // which is the note clicked id and the contents typed in the note
     updateNote = (updateInfo) => {
-        console.log(updateInfo)
         NotesService.updateNote(updateInfo)
+        // updating state again so that the navbar updates on click of save button
         NotesService.getNote().then((response)=>{
             this.setState({
                 notesTable: response.data
@@ -90,9 +90,9 @@ class NavBar extends Component {
                          {/* button has an onClick button to delete  */}
                          <button onClick={()=>this.deleteNote(note.id)}>Delete</button>
                         </div>
-                        {/* conditional to not show the full body. This will only show the first 100 characters then add on ... to the end
+                        {/* conditional to not show the full body. This will only show the first 30 characters then add on ... to the end
                         of it.  */}
-                        <p>{note.notes && note.notes.substr(0, 100) + "..."}</p>
+                        <p>{note.notes && note.notes.substr(0, 30) + "..."}</p>
                         {/* at the last modified statement, we instantiate a new date in the US format */}
                         {/* Also make the hour and minute into 2 digit number do it is not overcrowded */}
                         <p>{`Last edited: ${note.lastEdit}`}</p>
