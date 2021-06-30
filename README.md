@@ -1,6 +1,6 @@
 # Notes App
 
-This is a full-stack app. I used
+This is a full-stack app that uses both front-end and back-end technologies
 
 ## Getting Started with Create React App
 
