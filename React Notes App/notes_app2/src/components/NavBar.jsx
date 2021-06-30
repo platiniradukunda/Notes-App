@@ -16,6 +16,7 @@ class NavBar extends Component {
         }
     }
 
+    // Existing notes in the database will be rendered whenever the component mounts
     componentDidMount() {
         // getting the existing notes from the database
         NotesService.getNote().then((response)=>{
@@ -75,6 +76,10 @@ class NavBar extends Component {
         })
     }
 
+    // this.setState({
+    //     notesTable: this.state.notesTable.sort((a,b)=> b.lastEdit - a.lastEdit )
+    // })
+
     render () {
     return (
         <div className="mainContainer">
@@ -83,7 +88,7 @@ class NavBar extends Component {
                 <NotesPostComponent/>
                 <div className="listNotes">
                     {/* mapping through the array in state to render to the DOM */}
-                    {this.state.notesTable.map((note, index)=>(
+                    {this.state.notesTable.sort((a,b) => b.lastEdit - a.lastEdit).map((note, index)=>(
                     <div className="individualNote" key={index} onClick={()=>{this.clickedNote(note.id)}}>
                         <div className="titleAndDelete">
                          <h4>{note.title}</h4>
